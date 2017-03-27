@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -34,7 +35,8 @@ app.post('/chickens', (req, res, next) => {
 app.use((req, res) => {
   res.send("We only have monkeys and chickens. Sorry")
 })
-
+// we can set up an environment variable so we don't declare which port to listen on
+// using dotenv (npm package)
 app.listen(8080, () => {
   console.log('listening on port 8080')
 })
